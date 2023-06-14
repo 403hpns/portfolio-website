@@ -45,7 +45,7 @@ module.exports = {
       },
 
       backgroundImage: {
-        main: "url('/bg.svg')",
+        main: "url('../assets/bg.svg')",
       },
     },
   },

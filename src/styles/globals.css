@@ -5,26 +5,3 @@
 body {
   color: white;
 }
-
-.button-container {
-  display: inline-block;
-  perspective: 1000px;
-}
-
-.pressable-button {
-  background-color: #ffcc00;
-  color: #ffffff;
-  padding: 10px 20px;
-  font-size: 18px;
-  border: none;
-  transition: transform 0.3s;
-  transform-style: preserve-3d;
-}
-
-.pressable-button:hover {
-  transform: translateY(4px);
-}
-
-.pressable-button:active {
-  transform: translateY(8px);
-}

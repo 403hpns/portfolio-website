@@ -1,3 +1,5 @@
+"use client";
+
 import { ReactNode } from "react";
 
 const Icon = ({ element }: { element: ReactNode }) => {

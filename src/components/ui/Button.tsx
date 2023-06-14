@@ -1,3 +1,5 @@
+"use client";
+
 import { ButtonHTMLAttributes, FC, forwardRef, ReactNode } from "react";
 import { merge } from "@/lib/merge";
 import { cva, VariantProps } from "class-variance-authority";
