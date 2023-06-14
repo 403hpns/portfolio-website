@@ -14,7 +14,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${k2d.className} bg-main bg-fixed transition-colors`}>
+      <body
+        className={`${k2d.className} bg-main bg-fixed bg-center bg-no-reapeat bg-cover transition-colors`}
+      >
         {children}
       </body>
     </html>
