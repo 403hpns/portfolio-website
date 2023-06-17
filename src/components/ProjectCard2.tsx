@@ -1,4 +1,5 @@
 import Image, { StaticImageData } from "next/image";
+import Button from "./ui/Button";
 
 export enum ProjectStatus {
   done,
@@ -24,11 +25,16 @@ const ProjectCard2: React.FC<ProjectCardProps> = ({
 }) => {
   return (
     <div className="flex w-full rounded border-2 border-primary bg-zinc-900/80">
-      <div className="w-[40%] min-h-full">
-        <Image src={image} alt="" className="h-full object-cover" unoptimized />
+      <div className="min-h-full">
+        <Image
+          src={image}
+          alt=""
+          className="hidden h-full object-cover"
+          unoptimized
+        />
       </div>
-      <div className="w-[60%] p-4 flex flex-col gap-2">
-        <h2 className="text-xl text-primary font-bold leading-none ">
+      <div className="w-full p-4 flex flex-col gap-2">
+        <h2 className="text-3xl text-primary font-bold leading-none ">
           {title}{" "}
           <p className="text-base text-white normal-case">
             &#40;{status === ProjectStatus.done ? "Done" : "In-Progress"}
@@ -36,6 +42,9 @@ const ProjectCard2: React.FC<ProjectCardProps> = ({
           </p>
         </h2>
         <p className="text-justify">{description}</p>
+
+        <Button>See live demo</Button>
+        <Button>Check GitHub repository</Button>
       </div>
     </div>
   );

@@ -22,14 +22,14 @@ const MyProjects = () => {
       <ProjectCard2
         image={portfolioImg}
         title="e-Bank"
-        description="Website for bank."
+        description="A fictional online banking website. It includes a homepage that describes the benefits of opening an account with the bank, a functional dashboard where you can open a new bank account, create a new card, apply for a loan, or make a money transfer to another account. Used technologies: React, TypeScript, Next.js, TailwindCSS."
         status={ProjectStatus.inprogress}
         workTime={"1 week"}
       />
       <ProjectCard2
         image={portfolioImg}
         title="Shizuka no Sakura"
-        description="Browser game."
+        description="Browser game. More info coming soon."
         status={ProjectStatus.inprogress}
         workTime={"1 week"}
       />
