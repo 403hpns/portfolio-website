@@ -1,16 +1,16 @@
-"use client";
-
-import About from "@/components/About";
-import Header from "@/components/Header";
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/sections/Navbar";
+import Header from "@/components/sections/Header";
+import About from "@/components/sections/About";
+import MyProjects from "@/components/sections/MyProjects";
 
 const Home = () => {
   return (
-    <div className="container mx-auto px-8 py-6 flex flex-col gap-20">
+    <div className="container mx-auto px-8 py-5 flex flex-col gap-20">
       <Navbar />
       <Header />
-      <main>
+      <main className="flex flex-col gap-20">
         <About />
+        <MyProjects />
       </main>
     </div>
   );

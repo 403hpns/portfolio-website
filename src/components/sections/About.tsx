@@ -1,8 +1,8 @@
 import Image from "next/image";
-import AboutQuestions from "./AboutQuestions";
-import aboutImage from "../assets/hello.svg";
+import AboutQuestions from "../AboutQuestions";
+import aboutImage from "@/assets/hello.svg";
 import Link from "next/link";
-import Accordion from "./Accordion";
+import Accordion from "../Accordion";
 
 const questions = [
   { question: "name", anwser: "Kuba" },
@@ -11,7 +11,7 @@ const questions = [
   {
     question: "favorite games",
     anwser:
-      "Gothic I - III, Euro Truck Simulator 2, Grand Theft Auto series, Ready or Not, Minecraft, Among Us.",
+      "Gothic I - III, Euro Truck Simulator 2, Heroes of Might & Magic III, Grand Theft Auto series, Ready or Not, Minecraft, Among Us.",
   },
   { question: "humor level", anwser: '["hip", "hip"] (hip hip array!)' },
   { question: "interesests", anwser: "Video games" },
@@ -19,7 +19,7 @@ const questions = [
 
 const About = () => {
   return (
-    <section className="flex justify-between">
+    <section id="about" className="flex justify-between">
       <Image src={aboutImage} alt="" className="hidden" />
 
       <div className="flex flex-col items-center gap-8 w-full p-6 border-2 rounded-tl-[50px] rounded-br-[50px] border-primary bg-zinc-900/80">

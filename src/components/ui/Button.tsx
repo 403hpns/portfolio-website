@@ -5,6 +5,7 @@ import { merge } from "@/lib/merge";
 import { cva, VariantProps } from "class-variance-authority";
 
 import { BsArrowRight } from "react-icons/bs";
+import Link from "next/link";
 
 const buttonVariants = cva(
   "relative w-full flex justify-center items-center gap-2 z-10",
@@ -29,22 +30,25 @@ interface ButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   isLoading?: boolean;
+  href?: string;
   children: ReactNode;
 }
 
 const Button: FC<ButtonProps> = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ isLoading, children, className, variant, size, ...props }, ref) => {
+  ({ isLoading, href, children, className, variant, size, ...props }, ref) => {
     return (
       <div className="p-3 overflow-hidden ">
-        <button
-          ref={ref}
-          disabled={isLoading}
-          className={merge(buttonVariants({ className, variant, size }))}
-          {...props}
-        >
-          {children}
-          <BsArrowRight />
-        </button>
+        <Link href={href || "#"}>
+          <button
+            ref={ref}
+            disabled={isLoading}
+            className={merge(buttonVariants({ className, variant, size }))}
+            {...props}
+          >
+            {children}
+            <BsArrowRight />
+          </button>
+        </Link>
       </div>
     );
   }

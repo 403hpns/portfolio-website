@@ -3,10 +3,10 @@
 import { ReactNode, useCallback, useMemo } from "react";
 import { TypeAnimation } from "react-type-animation";
 
-import Button from "./ui/Button";
+import Button from "../ui/Button";
 import Image from "next/image";
 
-import hackerImage from "../assets/hacker.svg";
+import hackerImage from "@/assets/hacker.svg";
 
 const Header = () => {
   const getCurrentAge = useMemo(
@@ -45,10 +45,10 @@ const Header = () => {
         </div>
 
         <div className="lg:flex lg:justify-between lg:items-center">
-          <Button>Know me</Button>
-          <Button>See projects</Button>
+          <Button href="#about">Know me</Button>
+          <Button href="#projects">See projects</Button>
           <p className="hidden lg:block">or just</p>
-          <Button>Get contact</Button>
+          <Button href="#contact">Get contact</Button>
         </div>
       </div>
 

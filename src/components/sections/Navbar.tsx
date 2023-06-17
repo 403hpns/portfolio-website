@@ -3,8 +3,8 @@
 import { ReactNode } from "react";
 import Link from "next/link";
 
-import Logo from "./Logo";
-import Toolbar from "./Toolbar";
+import Logo from "../Logo";
+import Toolbar from "../Toolbar";
 
 import { SlMenu } from "react-icons/sl";
 
