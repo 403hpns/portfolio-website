@@ -10,7 +10,7 @@ const AboutQuestions = ({
       <p className="uppercase text-2xl text-primary font-semibold">
         {question}
       </p>
-      <p className="text-xl">{anwser}</p>
+      <p className="text-xl text-justify">{anwser}</p>
     </div>
   );
 };

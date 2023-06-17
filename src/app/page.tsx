@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 
 const Home = () => {
   return (
-    <div className="container mx-auto px-12 py-6 flex flex-col gap-20">
+    <div className="container mx-auto px-8 py-6 flex flex-col gap-20">
       <Navbar />
       <Header />
       <main>
