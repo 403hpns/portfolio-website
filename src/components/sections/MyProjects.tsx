@@ -7,7 +7,7 @@ import portfolioImg from "@/assets/portfoliopage.png";
 
 const MyProjects = () => {
   return (
-    <section id="projects" className="flex flex-col sm:gap-6">
+    <section id="projects" className="flex flex-col gap-10">
       <h2 className="uppercase text-8xl text-center">
         My <p className="text-3xl font-semibold text-primary">projects.</p>
       </h2>

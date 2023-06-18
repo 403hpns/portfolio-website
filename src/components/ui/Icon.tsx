@@ -1,12 +1,24 @@
 "use client";
 
+import Link from "next/link";
 import { ReactNode } from "react";
 
-const Icon = ({ element }: { element: ReactNode }) => {
+const Icon = ({
+  element,
+  href,
+  ...props
+}: {
+  element: ReactNode;
+  href: string;
+}) => {
   return (
-    <div className="flex justify-center items-center cursor-pointer hover:text-primary hover:scale-110">
+    <Link
+      href={href}
+      {...props}
+      className="w-auto flex justify-center items-center cursor-pointer hover:text-primary hover:scale-110"
+    >
       {element}
-    </div>
+    </Link>
   );
 };
 

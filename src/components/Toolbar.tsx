@@ -11,10 +11,10 @@ import { BiCoffeeTogo } from "react-icons/bi";
 const Toolbar = () => {
   return (
     <div className="hidden lg:flex md:gap-4 md:text-3xl">
-      <Icon element={<AiFillGithub />} />
-      <Icon element={<AiFillLinkedin />} />
-      <Icon element={<AiFillTwitterCircle />} />
-      <Icon element={<BiCoffeeTogo />} />
+      <Icon element={<AiFillGithub />} href="#" />
+      <Icon element={<AiFillLinkedin />} href="#" />
+      <Icon element={<AiFillTwitterCircle />} href="#" />
+      <Icon element={<BiCoffeeTogo />} href="#" />
     </div>
   );
 };
