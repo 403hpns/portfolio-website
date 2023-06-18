@@ -8,7 +8,7 @@ import Footer from "@/components/sections/Footer";
 const Home = () => {
   return (
     <>
-      <div className="container mx-auto px-8 py-5 flex flex-col gap-20">
+      <div className="container mx-auto px-8 py-5 flex flex-col gap-20 z-10">
         <Navbar />
         <Header />
         <main className="flex flex-col gap-20">

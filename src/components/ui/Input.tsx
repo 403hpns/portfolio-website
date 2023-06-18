@@ -8,7 +8,7 @@ const inputVariants = cva("", {
       default: "w-full",
     },
     sizing: {
-      default: "p-4 outline-none border-none rounded bg-zinc-800",
+      default: "p-4 my-2 outline-none border-none rounded bg-zinc-800",
     },
   },
   defaultVariants: {
@@ -28,7 +28,9 @@ const Input: React.FC<InputProps> = forwardRef<HTMLInputElement, InputProps>(
   ({ label, name, className, variant, sizing, ...props }, ref) => {
     return (
       <div className="relative w-full before:top-5 before:left-0 before:w-5 before:h-5 before:bg-red-500">
-        <label className="">{label}</label>
+        <label className="py-4" htmlFor={name}>
+          {label}
+        </label>
         <input
           name={name}
           ref={ref}

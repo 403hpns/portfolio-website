@@ -65,16 +65,22 @@ const Contact = () => {
         </Button>
       </div>
 
-      <div className="form flex flex-col justify-center items-center gap-4 w-full p-4 rounded border-2 border-primary bg-zinc-900/90">
+      <form className="hidden form flex flex-col justify-center items-center gap-4 w-full p-4 rounded border-2 border-primary bg-zinc-900/90">
         Feel free to send me a message.
         <Input name="mail" label="E-mail" />
         <Input name="subject" label="Subject" />
-        <Input name="msg" label="Message" />
+        <div className="min-w-full">
+          <label htmlFor="message">Message</label>
+          <textarea
+            name="message"
+            className="my-2 p-2 min-h-[100px] w-full outline-none border-none resize-none bg-zinc-800"
+          />
+        </div>
         <div className="flex justify-center items-center gap-4">
           <Button type="submit">Submit</Button>
-          <Button>Clear</Button>
+          <Button type="reset">Clear</Button>
         </div>
-      </div>
+      </form>
     </section>
   );
 };
