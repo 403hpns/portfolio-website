@@ -11,6 +11,8 @@ import { BsDiscord } from "react-icons/bs";
 import Button from "../ui/Button";
 import Input from "../ui/Input";
 
+import { motion } from "framer-motion";
+
 const Contact = () => {
   return (
     <section
@@ -65,7 +67,7 @@ const Contact = () => {
         </Button>
       </div>
 
-      <form className="hidden form flex flex-col justify-center items-center gap-4 w-full p-4 rounded border-2 border-primary bg-zinc-900/90">
+      <form className="hidden form flex-col justify-center items-center gap-4 w-full p-4 rounded border-2 border-primary bg-zinc-900/90 animate-show-ui">
         Feel free to send me a message.
         <Input name="mail" label="E-mail" />
         <Input name="subject" label="Subject" />

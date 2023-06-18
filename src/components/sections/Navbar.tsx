@@ -14,6 +14,23 @@ const Navbar = ({ children }: { children?: ReactNode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
+    const handleScroll = () => {
+      const nav = document.querySelector(".nav");
+      if (window.scrollY > 0) {
+        nav?.classList.add("nav-fixed");
+      } else {
+        nav?.classList.remove("nav-fixed");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
     if (isMenuOpen) {
       // Blokuj przewijanie strony, gdy menu jest otwarte
       document.body.style.overflow = "hidden";
@@ -24,7 +41,7 @@ const Navbar = ({ children }: { children?: ReactNode }) => {
   }, [isMenuOpen]);
 
   return (
-    <nav className="flex justify-between items-center">
+    <nav className="nav flex justify-between items-center">
       <Logo />
 
       {/* For mobile devices */}

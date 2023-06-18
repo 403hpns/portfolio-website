@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       animation: {
         "button-hover": "button-animation-hover 0.15s ease-in",
+        "show-ui": "show-ui 5s ease-out forwards",
       },
 
       keyframes: {
