@@ -63,7 +63,7 @@ const Button: FC<ButtonProps> = forwardRef<HTMLButtonElement, ButtonProps>(
       <div className="p-3 overflow-hidden ">
         <Link
           href={href || "#"}
-          target="_blank"
+          target={href?.includes("#") ? "_self" : "_blank"}
           onClick={(ev) => {
             if (!href) ev.preventDefault();
           }}

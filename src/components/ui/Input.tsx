@@ -5,10 +5,10 @@ import { InputHTMLAttributes, ReactNode, forwardRef } from "react";
 const inputVariants = cva("", {
   variants: {
     variant: {
-      default: "",
+      default: "w-full",
     },
     sizing: {
-      default: "",
+      default: "p-4 outline-none border-none rounded bg-zinc-800",
     },
   },
   defaultVariants: {
@@ -20,19 +20,22 @@ const inputVariants = cva("", {
 interface InputProps
   extends InputHTMLAttributes<HTMLInputElement>,
     VariantProps<typeof inputVariants> {
-  children: ReactNode;
+  name: string;
+  label: string;
 }
 
 const Input: React.FC<InputProps> = forwardRef<HTMLInputElement, InputProps>(
-  ({ children, className, variant, sizing, ...props }, ref) => {
+  ({ label, name, className, variant, sizing, ...props }, ref) => {
     return (
-      <input
-        ref={ref}
-        {...props}
-        className={merge(inputVariants({ className, variant, sizing }))}
-      >
-        {children}
-      </input>
+      <div className="relative w-full before:top-5 before:left-0 before:w-5 before:h-5 before:bg-red-500">
+        <label className="">{label}</label>
+        <input
+          name={name}
+          ref={ref}
+          {...props}
+          className={merge(inputVariants({ className, variant, sizing }))}
+        />
+      </div>
     );
   }
 );

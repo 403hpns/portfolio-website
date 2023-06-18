@@ -9,6 +9,7 @@ import {
 } from "react-icons/ai";
 import { BsDiscord } from "react-icons/bs";
 import Button from "../ui/Button";
+import Input from "../ui/Input";
 
 const Contact = () => {
   return (
@@ -64,8 +65,15 @@ const Contact = () => {
         </Button>
       </div>
 
-      <div className="form hidden w-full p-4 rounded border-2 border-primary bg-zinc-900/90">
+      <div className="form flex flex-col justify-center items-center gap-4 w-full p-4 rounded border-2 border-primary bg-zinc-900/90">
         Feel free to send me a message.
+        <Input name="mail" label="E-mail" />
+        <Input name="subject" label="Subject" />
+        <Input name="msg" label="Message" />
+        <div className="flex justify-center items-center gap-4">
+          <Button type="submit">Submit</Button>
+          <Button>Clear</Button>
+        </div>
       </div>
     </section>
   );
