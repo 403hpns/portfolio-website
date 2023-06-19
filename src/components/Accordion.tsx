@@ -15,7 +15,7 @@ const Accordion: React.FC<AccordionProps> = ({ header, body }) => {
   return (
     <div className="flex flex-col">
       <div
-        className="w-full p-4 flex justify-between items-center rounded-t bg-zinc-800 cursor-pointer hover:bg-zinc-700"
+        className="w-full p-4 flex justify-between items-center rounded-t text-xl bg-zinc-800 cursor-pointer hover:bg-zinc-700"
         onClick={() => setIsOpen((prevValue) => !prevValue)}
       >
         {header}

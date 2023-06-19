@@ -14,7 +14,11 @@ const questions = [
       "Gothic I - III, Euro Truck Simulator 2, Heroes of Might & Magic III, Grand Theft Auto series, Ready or Not, Minecraft, Among Us.",
   },
   { question: "humor level", anwser: '["hip", "hip"] (hip hip array!)' },
-  { question: "interesests", anwser: "Video games" },
+  {
+    question: "interests",
+    anwser:
+      "Programming (no shit sherlock), game dev, video games, psychology, reading books, extreme sports (like extreme sitting 24 hours at the computer)",
+  },
 ];
 
 const About = () => {
@@ -50,7 +54,7 @@ const About = () => {
             My career
           </p>
           <ul>
-            <li className="text-justify">
+            <li className="text-justify text-xl">
               - Ancad Studios as Full-stack Developer (12.06.2023 - 12.06.2023)
               - creating user interfaces for RolePlay server in Grand Theft
               Auto: V on{" "}
