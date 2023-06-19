@@ -18,10 +18,8 @@ const Navbar = ({ children }: { children?: ReactNode }) => {
       const nav = document.querySelector(".nav");
       if (window.scrollY > 100) {
         nav?.classList.add("nav-fixed");
-        document.body.classList.add("bg-red-500");
       } else {
         nav?.classList.remove("nav-fixed");
-        document.body.classList.remove("pt-[100px]");
       }
     };
 
