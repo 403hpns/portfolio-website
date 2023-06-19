@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="inline-flex justify-center items-center w-full p-4 bg-primary">
+    <footer className="inline-flex justify-center items-center w-full p-4 text-center bg-primary">
       Made with 💜 by Jakub &apos;403hpns&apos; Korż. All rights reserved.
     </footer>
   );

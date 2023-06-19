@@ -16,10 +16,12 @@ const Navbar = ({ children }: { children?: ReactNode }) => {
   useEffect(() => {
     const handleScroll = () => {
       const nav = document.querySelector(".nav");
-      if (window.scrollY > 0) {
+      if (window.scrollY > 100) {
         nav?.classList.add("nav-fixed");
+        document.body.classList.add("bg-red-500");
       } else {
         nav?.classList.remove("nav-fixed");
+        document.body.classList.remove("pt-[100px]");
       }
     };
 
@@ -41,7 +43,7 @@ const Navbar = ({ children }: { children?: ReactNode }) => {
   }, [isMenuOpen]);
 
   return (
-    <nav className="nav flex justify-between items-center">
+    <nav className="nav flex justify-between items-center p-4">
       <Logo />
 
       {/* For mobile devices */}
@@ -121,7 +123,7 @@ const HamburgerItem = ({
     <Link
       href={href}
       onClick={onClick}
-      className="my-4 uppercase text-5xl hover:font-semibold hover:text-pink-500 "
+      className="my-4 uppercase text-4xl hover:font-semibold hover:text-pink-500 "
     >
       {children}
     </Link>

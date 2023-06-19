@@ -36,7 +36,7 @@ const ProjectCard2: React.FC<ProjectCardProps> = ({
       <div className="w-full p-4 flex flex-col gap-2">
         <h2 className="text-3xl text-primary font-bold leading-none ">
           {title}{" "}
-          <p className="text-base text-white normal-case">
+          <p className="text-base text-white normal-case font-normal">
             &#40;{status === ProjectStatus.done ? "Done" : "In-Progress"}
             {status === ProjectStatus.done && <>, {workTime} of work</>}&#41;
           </p>

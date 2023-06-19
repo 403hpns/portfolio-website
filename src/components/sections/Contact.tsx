@@ -68,7 +68,7 @@ const Contact = () => {
       </div>
 
       <form className="hidden form flex-col justify-center items-center gap-4 w-full p-4 rounded border-2 border-primary bg-zinc-900/90 animate-show-ui">
-        Feel free to send me a message.
+        <p className="p-2 text-center">Feel free to send me a message.</p>
         <Input name="mail" label="E-mail" />
         <Input name="subject" label="Subject" />
         <div className="min-w-full">
