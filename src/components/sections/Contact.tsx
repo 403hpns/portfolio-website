@@ -15,7 +15,10 @@ import { motion } from "framer-motion";
 
 const Contact = () => {
   return (
-    <section
+    <motion.section
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 1 }}
       id="contact"
       className="flex flex-col justify-center items-center gap-10 p-4 "
     >
@@ -83,7 +86,7 @@ const Contact = () => {
           <Button type="reset">Clear</Button>
         </div>
       </form>
-    </section>
+    </motion.section>
   );
 };
 

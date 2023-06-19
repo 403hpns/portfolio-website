@@ -6,6 +6,8 @@ import { TypeAnimation } from "react-type-animation";
 import Button from "../ui/Button";
 import Image from "next/image";
 
+import { motion } from "framer-motion";
+
 import hackerImage from "@/assets/hacker.svg";
 
 const Header = () => {
@@ -19,7 +21,11 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="flex justify-between items-center">
+    <motion.header
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      className="flex justify-between items-center"
+    >
       <div className="flex flex-col justify-center gap-12 min-w-1/2 leading-none">
         <div className="font-semibold text-6xl text-center lg:text-left">
           Hello,{" "}
@@ -58,7 +64,7 @@ const Header = () => {
         className="hidden lg:block transition-opacity opacity-0 duration-500"
         onLoadingComplete={removeOpaciyWhenImageLoaded}
       />
-    </header>
+    </motion.header>
   );
 };
 

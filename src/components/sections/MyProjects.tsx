@@ -1,13 +1,21 @@
-import { ProjectStatus } from "../ProjectCard";
+"use client";
 
+import { ProjectStatus } from "../ProjectCard";
 import ProjectCard2 from "../ProjectCard2";
-import ProjectCard from "../ProjectCard";
 
 import portfolioImg from "@/assets/portfoliopage.png";
 
+import { motion } from "framer-motion";
+
 const MyProjects = () => {
   return (
-    <section id="projects" className="flex flex-col gap-10">
+    <motion.section
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+      id="projects"
+      className="flex flex-col gap-10"
+    >
       <h2 className="uppercase text-8xl text-center">
         My <p className="text-3xl font-semibold text-primary">projects.</p>
       </h2>
@@ -33,7 +41,7 @@ const MyProjects = () => {
         status={ProjectStatus.inprogress}
         workTime={"1 week"}
       />
-    </section>
+    </motion.section>
   );
 };
 

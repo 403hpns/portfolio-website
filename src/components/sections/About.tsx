@@ -1,8 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import AboutQuestions from "../AboutQuestions";
 import aboutImage from "@/assets/hello.svg";
 import Link from "next/link";
 import Accordion from "../Accordion";
+
+import { motion } from "framer-motion";
 
 const questions = [
   { question: "name", anwser: "Kuba" },
@@ -23,7 +27,14 @@ const questions = [
 
 const About = () => {
   return (
-    <section id="about" className="flex justify-between">
+    <motion.section
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+
+      id="about"
+      className="flex justify-between"
+    >
       <Image src={aboutImage} alt="" className="hidden" />
 
       <div className="flex flex-col items-center gap-8 w-full p-6 border-2 rounded-tl-[50px] rounded-br-[50px] border-primary bg-zinc-900/80">
@@ -93,7 +104,7 @@ const About = () => {
           />
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
