@@ -31,7 +31,6 @@ const About = () => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1 }}
-
       id="about"
       className="flex justify-between"
     >
@@ -66,7 +65,7 @@ const About = () => {
           </p>
           <ul>
             <li className="text-justify text-xl">
-              - Ancad Studios as Full-stack Developer (12.06.2023 - 12.06.2023)
+              - Ancad Studios as Full-stack Developer (09.10.2022 - 01.05.2023)
               - creating user interfaces for RolePlay server in Grand Theft
               Auto: V on{" "}
               <Link
