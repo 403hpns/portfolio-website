@@ -13,7 +13,6 @@ const MyProjects = () => {
       <h2 className="mb-10 uppercase text-8xl text-center">
         My <p className="text-3xl font-semibold text-primary">projects.</p>
       </h2>
-
       <ProjectCard
         image={portfolioImg}
         title="My portfolio"
@@ -22,13 +21,21 @@ const MyProjects = () => {
         workTime={"1 week"}
         liveButtonHref="#"
       />
+
+      <ProjectCard
+        image={""}
+        title="GitHub Searcher"
+        description="GitHub searcher"
+        position="right"
+        status={ProjectStatus.done}
+        workTime={"1 day"}
+      />
       <ProjectCard
         image={portfolioImg}
         title="e-Bank"
         description="A fictional online banking website. It includes a homepage that describes the benefits of opening an account with the bank, a functional dashboard where you can open a new bank account, create a new card, apply for a loan, or make a money transfer to another account. Used technologies: React, TypeScript, Next.js, TailwindCSS."
         status={ProjectStatus.inprogress}
         workTime={"1 week"}
-        position="right"
       />
       <ProjectCard
         image={portfolioImg}
@@ -38,6 +45,7 @@ const MyProjects = () => {
         workTime={"1 week"}
         liveButtonHref="xx"
         repositoryButtonHref="https://github.com/Playrole-Games/shizuka-no-sakura"
+        position="right"
       />
     </section>
   );

@@ -57,7 +57,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       exit={"exitPosition"}
       className={`${
         position === "left" ? "self-start" : "self-end"
-      } w-full my-5 lg:my-0 lg:w-1/2 rounded border-2 border-primary bg-zinc-900/80 origin-top subpixel-antialiased`}
+      } w-full p-6 my-5 lg:my-0 lg:w-1/2 rounded border-2 border-primary bg-zinc-900/80 origin-top subpixel-antialiased`}
     >
       <div className="min-h-full">
         <Image

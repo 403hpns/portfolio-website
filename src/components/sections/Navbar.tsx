@@ -33,7 +33,7 @@ const Navbar = ({ children }: { children?: ReactNode }) => {
   }, [isMenuOpen]);
 
   return (
-    <nav className="fixed top-0 left-0 w-full px-8 py-6 2xl:px-40 flex justify-between items-center z-50 bg-black/80 before:absolute before:inset-0 before:w-full before:h-full before:backdrop-blur-xl before:-z-50">
+    <nav className="fixed top-0 left-0 w-full px-8 py-6 2xl:px-40 flex justify-between items-center z-50 bg-black/50 before:absolute before:inset-0 before:w-full before:h-full before:backdrop-blur-xl before:-z-50">
       <Logo />
 
       {/* For mobile devices */}
