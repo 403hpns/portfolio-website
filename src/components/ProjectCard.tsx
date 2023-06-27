@@ -1,5 +1,8 @@
+import { useEffect, useRef } from "react";
 import Image, { StaticImageData } from "next/image";
 import Button from "./ui/Button";
+
+import { motion, useAnimation, useInView } from "framer-motion";
 
 export enum ProjectStatus {
   done,
@@ -17,6 +20,12 @@ interface ProjectCardProps {
   repositoryButtonHref?: string;
 }
 
+const variants = {
+  hiddenPosition: (pos: string) =>
+    pos === "left" ? { x: "-100%" } : { x: "100%" },
+  visiblePosition: { x: "0%" },
+};
+
 const ProjectCard: React.FC<ProjectCardProps> = ({
   image,
   title,
@@ -27,11 +36,28 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   liveButtonHref,
   repositoryButtonHref,
 }) => {
+  const controls = useAnimation();
+  const ref = useRef(null);
+  const inView = useInView(ref);
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visiblePosition");
+    } else {
+      controls.start("hiddenPosition");
+    }
+  }, [controls, inView]);
   return (
-    <div
+    <motion.div
+      variants={variants}
+      custom={position}
+      animate={controls}
+      transition={{ duration: 0.2 }}
+      ref={ref}
+      exit={"exitPosition"}
       className={`${
         position === "left" ? "self-start" : "self-end"
-      } w-full my-5 lg:my-0 lg:w-1/2 rounded border-2 border-primary bg-zinc-900/80`}
+      } w-full my-5 lg:my-0 lg:w-1/2 rounded border-2 border-primary bg-zinc-900/80 origin-top subpixel-antialiased`}
     >
       <div className="min-h-full">
         <Image
@@ -58,7 +84,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           Check GitHub repository
         </Button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

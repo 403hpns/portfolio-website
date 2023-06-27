@@ -9,13 +9,7 @@ import { motion } from "framer-motion";
 
 const MyProjects = () => {
   return (
-    <motion.section
-      initial={{ opacity: 0, top: -300, left: 100 }}
-      whileInView={{ opacity: 1, top: 0, left: 0 }}
-      transition={{ duration: 1 }}
-      id="projects"
-      className="flex flex-col items-center"
-    >
+    <section id="projects" className="flex flex-col items-center">
       <h2 className="mb-10 uppercase text-8xl text-center">
         My <p className="text-3xl font-semibold text-primary">projects.</p>
       </h2>
@@ -45,7 +39,7 @@ const MyProjects = () => {
         liveButtonHref="xx"
         repositoryButtonHref="https://github.com/Playrole-Games/shizuka-no-sakura"
       />
-    </motion.section>
+    </section>
   );
 };
 

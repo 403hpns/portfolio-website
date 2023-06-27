@@ -10,9 +10,23 @@ module.exports = {
       animation: {
         "button-hover": "button-animation-hover 0.2s ease-in",
         "show-ui": "show-ui 5s ease-out forwards",
+        "move-from-left": "move-left 1.5s ease-out forwards",
+        "move-from-right": "move-right 1.5s ease-out forwards",
       },
 
       keyframes: {
+        "move-left": {
+          from: {
+            transform: "rotate(0)",
+          },
+          to: { transform: "rotate(-3deg)" },
+        },
+        "move-right": {
+          from: {
+            transform: "rotate(0)",
+          },
+          to: { transform: "rotate(3deg)" },
+        },
         "button-animation-hover": {
           from: {
             "flex-grow": 0,
