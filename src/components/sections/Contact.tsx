@@ -18,7 +18,7 @@ const Contact = () => {
     <motion.section
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      transition={{ duration: 1 }}
+      transition={{ duration: 0.5 }}
       id="contact"
       className="flex flex-col justify-center items-center gap-10 p-4 "
     >
@@ -40,17 +40,17 @@ const Contact = () => {
         <Button
           variant="contact"
           icon={false}
-          href="https://discord.gg/54aafTquym"
+          href="https://github.com/403hpns"
         >
-          <BsDiscord />
+          <AiFillGithub />
         </Button>
 
         <Button
           variant="contact"
           icon={false}
-          href="https://github.com/403hpns"
+          href="https://www.linkedin.com/in/jakub-kor%C5%BC/"
         >
-          <AiFillGithub />
+          <AiFillLinkedin />
         </Button>
 
         <Button
@@ -64,13 +64,13 @@ const Contact = () => {
         <Button
           variant="contact"
           icon={false}
-          href="https://www.linkedin.com/in/jakub-kor%C5%BC/"
+          href="https://discord.gg/54aafTquym"
         >
-          <AiFillLinkedin />
+          <BsDiscord />
         </Button>
       </div>
 
-      <form className="hidden form flex-col justify-center items-center gap-4 w-full p-4 rounded border-2 border-primary bg-zinc-900/90 animate-show-ui">
+      <form className="hidden form flex-col justify-center items-center gap-4 w-full lg:w-1/2 p-4 rounded border-2 border-primary bg-zinc-900/90 animate-show-ui">
         <p className="p-2 text-center">Feel free to send me a message.</p>
         <Input name="mail" label="E-mail" />
         <Input name="subject" label="Subject" />

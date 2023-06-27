@@ -42,12 +42,8 @@ const Header = () => {
           <span className="font-semibold text-[#6C63FF] tracking-wide ">
             self-taught
           </span>{" "}
-          full-stack developer. It&apos;s great to see you here!
-          <p className="hidden lg:inline">
-            This is my place on the Internet, which I am very happy to introduce
-            to you. What would you like to do first?
-          </p>{" "}
-          What would you like to do first?
+          full-stack developer. It&apos;s great to see you here! What would you
+          like to do first?
         </div>
 
         <div className="lg:flex lg:justify-between lg:items-center">

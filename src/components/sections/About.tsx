@@ -30,13 +30,17 @@ const About = () => {
     <motion.section
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      transition={{ duration: 1 }}
+      transition={{ duration: 0.5 }}
       id="about"
-      className="flex justify-between"
+      className="relative flex justify-end"
     >
-      <Image src={aboutImage} alt="" className="hidden" />
+      <Image
+        src={aboutImage}
+        alt=""
+        className="hidden lg:block lg:absolute lg:left-[-100px] lg:top-0 lg:w-1/2 lg:z-50"
+      />
 
-      <div className="flex flex-col items-center gap-8 w-full p-6 border-2 rounded-tl-[50px] rounded-br-[50px] border-primary bg-zinc-900/80">
+      <div className="flex flex-col items-center gap-8 w-full p-6 border-2 rounded-tl-[50px] rounded-br-[50px] border-primary bg-zinc-900/80 lg:w-1/2">
         {/* Heading */}
         <div className="flex px-8 py-4">
           <h2 className="uppercase font-semibold text-5xl">

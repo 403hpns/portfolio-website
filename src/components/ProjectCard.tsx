@@ -1,4 +1,5 @@
 import Image, { StaticImageData } from "next/image";
+import Button from "./ui/Button";
 
 export enum ProjectStatus {
   done,
@@ -25,37 +26,29 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   return (
     <div
       className={`${
-        position === "left"
-          ? "self-start"
-          : position === "right"
-          ? "self-end"
-          : null
-      } relative before:absolute before:top-[-15px] before:right-[15px] before:w-[100px] before:h-[2px] before:bg-[#6C63FF] after:absolute after:bottom-[-15px] after:left-[15px] after:w-[250px] after:h-[2px] after:bg-[#6C63FF] flex gap-4 w-1/2 p-4  border-2 border-[#6C63FF] rounded bg-zinc-900/90`}
+        position === "left" ? "self-start" : "self-end"
+      } w-full my-5 lg:my-0 lg:w-1/2 rounded border-2 border-primary bg-zinc-900/80`}
     >
-      <Image
-        src={image}
-        alt="Website preview"
-        width={200}
-        height={200}
-        className="min-w-[200px] border border-[#333]"
-        unoptimized={true}
-      />
-
-      <div className="p-2 flex flex-col gap-2">
-        <p className="leading-none uppercase font-semibold text-xl text-[#6C63FF]">
+      <div className="min-h-full">
+        <Image
+          src={image}
+          alt=""
+          className="hidden h-full object-cover"
+          unoptimized
+        />
+      </div>
+      <div className="w-full p-4 flex flex-col gap-2">
+        <h2 className="text-3xl text-primary font-bold leading-none ">
           {title}{" "}
-          <span className="font-normal text-base normal-case block text-white">
-            &#40;
-            {status === ProjectStatus.done
-              ? "Done"
-              : status === ProjectStatus.inprogress
-              ? "In-progress"
-              : null}
-            {workTime && `, ${workTime}`}&#41;
-          </span>
-        </p>
-        <span className="w-full h-px bg-[#6C63FF]" />
+          <p className="text-base text-white normal-case font-normal">
+            &#40;{status === ProjectStatus.done ? "Done" : "In-Progress"}
+            {status === ProjectStatus.done && <>, {workTime} of work</>}&#41;
+          </p>
+        </h2>
         <p className="text-justify">{description}</p>
+
+        <Button>See live demo</Button>
+        <Button>Check GitHub repository</Button>
       </div>
     </div>
   );

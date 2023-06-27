@@ -14,6 +14,7 @@ const Icon = ({
   return (
     <Link
       href={href}
+      target="_blank"
       {...props}
       className="w-auto flex justify-center items-center cursor-pointer hover:text-primary hover:scale-110"
     >
