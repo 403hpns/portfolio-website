@@ -2,13 +2,11 @@
 
 import { ReactNode, useState, useEffect } from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { SlMenu } from "react-icons/sl";
 
 import Logo from "../Logo";
 import Toolbar from "../Toolbar";
-
-import { motion } from "framer-motion";
-
-import { SlMenu } from "react-icons/sl";
 
 const Navbar = ({ children }: { children?: ReactNode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -91,11 +89,11 @@ const Navbar = ({ children }: { children?: ReactNode }) => {
 
       {/* For other devices */}
       <div className="hidden lg:block">
-        <ul className="p-4 flex justify-between gap-20 rounded bg-zinc-900/90">
-          <Link href="#about">About</Link>
-          <Link href="#projects">My projects</Link>
-          <Link href="#contact">Contact</Link>
-          <Link href="#">Resume</Link>
+        <ul className="flex justify-between rounded bg-zinc-900/90">
+          <ListItem href="#about">About me</ListItem>
+          <ListItem href="#projects">My projects</ListItem>
+          <ListItem href="#contact">Contact</ListItem>
+          <ListItem href="#">Resume</ListItem>
         </ul>
       </div>
 
@@ -124,6 +122,20 @@ const HamburgerItem = ({
       className="my-4 uppercase text-4xl hover:font-semibold hover:text-pink-500 "
     >
       {children}
+    </Link>
+  );
+};
+
+const ListItem = ({
+  children,
+  href,
+}: {
+  children: ReactNode;
+  href: string;
+}) => {
+  return (
+    <Link href={href} className="py-4 px-12 transition-colors hover:bg-primary">
+      <li>{children}</li>
     </Link>
   );
 };

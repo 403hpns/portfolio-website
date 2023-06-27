@@ -10,13 +10,13 @@ import { motion } from "framer-motion";
 const MyProjects = () => {
   return (
     <motion.section
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
+      initial={{ opacity: 0, top: -300, left: 100 }}
+      whileInView={{ opacity: 1, top: 0, left: 0 }}
+      transition={{ duration: 1 }}
       id="projects"
       className="flex flex-col items-center"
     >
-      <h2 className="py-10 uppercase text-8xl text-center">
+      <h2 className="mb-10 uppercase text-8xl text-center">
         My <p className="text-3xl font-semibold text-primary">projects.</p>
       </h2>
 
@@ -26,6 +26,7 @@ const MyProjects = () => {
         description="My own portfolio website, which you are currently on. I used technologies like: React, TypeScript, Next.js, TailwindCSS. The biggest challenge was the overflow of ideas, as each new one drastically changed the entire site, resulting in increased development time. In the end, I opted for something simple."
         status={ProjectStatus.done}
         workTime={"1 week"}
+        liveButtonHref="#"
       />
       <ProjectCard
         image={portfolioImg}
@@ -41,6 +42,8 @@ const MyProjects = () => {
         description="Browser game. More info coming soon."
         status={ProjectStatus.inprogress}
         workTime={"1 week"}
+        liveButtonHref="xx"
+        repositoryButtonHref="https://github.com/Playrole-Games/shizuka-no-sakura"
       />
     </motion.section>
   );

@@ -16,9 +16,9 @@ import { motion } from "framer-motion";
 const Contact = () => {
   return (
     <motion.section
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
+      initial={{ opacity: 0, top: -100 }}
+      whileInView={{ opacity: 1, top: 0 }}
+      transition={{ duration: 1 }}
       id="contact"
       className="flex flex-col justify-center items-center gap-10 p-4 "
     >

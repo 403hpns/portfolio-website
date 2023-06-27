@@ -16,7 +16,7 @@ const Icon = ({
       href={href}
       target="_blank"
       {...props}
-      className="w-auto flex justify-center items-center cursor-pointer hover:text-primary hover:scale-110"
+      className="w-auto flex justify-center items-center cursor-pointer transition hover:text-primary hover:scale-110"
     >
       {element}
     </Link>

@@ -28,7 +28,3 @@ html {
   backdrop-filter: blur(15px);
   z-index: -999;
 }
-
-section {
-  margin-block: 3rem;
-}

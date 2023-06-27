@@ -8,17 +8,17 @@ module.exports = {
   theme: {
     extend: {
       animation: {
-        "button-hover": "button-animation-hover 0.15s ease-in",
+        "button-hover": "button-animation-hover 0.2s ease-in",
         "show-ui": "show-ui 5s ease-out forwards",
       },
 
       keyframes: {
         "button-animation-hover": {
           from: {
-            right: 100,
+            "flex-grow": 0,
           },
           to: {
-            right: 0,
+            "flex-grow": 1,
           },
         },
       },

@@ -13,6 +13,8 @@ interface ProjectCardProps {
   position?: string;
   status: ProjectStatus;
   workTime?: string | number;
+  liveButtonHref?: string;
+  repositoryButtonHref?: string;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -22,6 +24,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   position = "left",
   status,
   workTime,
+  liveButtonHref,
+  repositoryButtonHref,
 }) => {
   return (
     <div
@@ -47,8 +51,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         </h2>
         <p className="text-justify">{description}</p>
 
-        <Button>See live demo</Button>
-        <Button>Check GitHub repository</Button>
+        <Button disabled={!liveButtonHref} href={liveButtonHref}>
+          See live demo
+        </Button>
+        <Button disabled={!repositoryButtonHref} href={repositoryButtonHref}>
+          Check GitHub repository
+        </Button>
       </div>
     </div>
   );

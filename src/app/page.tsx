@@ -11,7 +11,7 @@ const Home = () => {
       <div className="container mx-auto px-8 py-5 flex flex-col gap-20 z-10 overflow-x-hidden">
         <Navbar />
         <Header />
-        <main className="flex flex-col gap-20">
+        <main className="flex flex-col gap-40">
           <About />
           <MyProjects />
           <Contact />
