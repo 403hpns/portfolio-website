@@ -37,7 +37,7 @@ const About = () => {
       <Image
         src={aboutImage}
         alt=""
-        className="hidden lg:block lg:absolute lg:left-[-100px] lg:top-0 lg:w-1/2 lg:z-50"
+        className="hidden lg:block lg:absolute lg:left-[-100px] lg:top-0 lg:w-1/2"
       />
 
       <div className="flex flex-col items-center gap-8 w-full p-6 border-2 rounded-tl-[50px] rounded-br-[50px] border-primary bg-zinc-900/80 lg:w-1/2">

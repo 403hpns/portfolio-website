@@ -25,9 +25,10 @@ const buttonVariants = cva(
         after:absolute after:top-0 after:left-0 after:w-0 after:h-full hover:after:w-full hover:after:h-full  after:bg-pink-500/80 after:-z-10 after:transition-all after:duration-300`,
 
         contact: "text-5xl rounded bg-primary cursor-pointer hover:bg-pink-500",
+        navigation: "h-full w-full hover:bg-primary bg-zinc-900/80",
       },
       size: {
-        default: "px-8 py-6",
+        default: "px-10 py-5",
       },
     },
     defaultVariants: {
@@ -63,7 +64,7 @@ const Button: FC<ButtonProps> = forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ) => {
     return (
-      <div className="p-3 overflow-hidden ">
+      <div className="my-2">
         <Link
           href={href || "#"}
           target={href?.includes("#") ? "_self" : "_blank"}

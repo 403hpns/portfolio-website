@@ -7,10 +7,14 @@ import {
 } from "react-icons/ai";
 
 import { BiCoffeeTogo } from "react-icons/bi";
+import Button from "./ui/Button";
 
 const Toolbar = () => {
   return (
     <div className="hidden lg:flex md:gap-4 md:text-3xl">
+      <Button icon={false} variant="navigation" className="text-base">
+        Resume
+      </Button>
       <Icon element={<AiFillGithub />} href="https://github.com/403hpns" />
       <Icon
         element={<AiFillLinkedin />}

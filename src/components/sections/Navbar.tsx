@@ -7,26 +7,20 @@ import { SlMenu } from "react-icons/sl";
 
 import Logo from "../Logo";
 import Toolbar from "../Toolbar";
+import {
+  AiOutlineFileDone,
+  AiOutlineFolderOpen,
+  AiOutlineMail,
+  AiOutlineUser,
+} from "react-icons/ai";
+
+import { FiMail } from "react-icons/fi";
+import { GrDocumentPdf } from "react-icons/gr";
+import { FaFolder, FaUserAlt, FaPhoneAlt } from "react-icons/fa";
+import Button from "../ui/Button";
 
 const Navbar = ({ children }: { children?: ReactNode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const nav = document.querySelector(".nav");
-      if (window.scrollY > 100) {
-        nav?.classList.add("nav-fixed");
-      } else {
-        nav?.classList.remove("nav-fixed");
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -39,7 +33,7 @@ const Navbar = ({ children }: { children?: ReactNode }) => {
   }, [isMenuOpen]);
 
   return (
-    <nav className="nav flex justify-between items-center p-4">
+    <nav className="fixed top-0 left-0 w-full px-8 py-6 2xl:px-40 flex justify-between items-center z-50 bg-black/80 before:absolute before:inset-0 before:w-full before:h-full before:backdrop-blur-xl before:-z-50">
       <Logo />
 
       {/* For mobile devices */}
@@ -89,11 +83,16 @@ const Navbar = ({ children }: { children?: ReactNode }) => {
 
       {/* For other devices */}
       <div className="hidden lg:block">
-        <ul className="flex justify-between rounded bg-zinc-900/90">
-          <ListItem href="#about">About me</ListItem>
-          <ListItem href="#projects">My projects</ListItem>
-          <ListItem href="#contact">Contact</ListItem>
-          <ListItem href="#">Resume</ListItem>
+        <ul className="flex justify-between rounded">
+          <Button icon={false} variant="navigation" href="#about">
+            About me
+          </Button>
+          <Button icon={false} variant="navigation" href="#projects">
+            My projects
+          </Button>
+          <Button icon={false} variant="navigation" href="#contact">
+            Contact
+          </Button>
         </ul>
       </div>
 
@@ -135,7 +134,7 @@ const ListItem = ({
 }) => {
   return (
     <Link href={href} className="py-4 px-12 transition-colors hover:bg-primary">
-      <li>{children}</li>
+      <li className="flex items-center gap-3">{children}</li>
     </Link>
   );
 };
