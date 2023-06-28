@@ -1,11 +1,9 @@
 "use client";
 
-import { ProjectStatus } from "../ProjectCard";
-import ProjectCard from "../ProjectCard";
-
-import portfolioImg from "@/assets/portfoliopage.png";
-
 import { motion } from "framer-motion";
+
+import ProjectCard from "../ProjectCard";
+import { ProjectStatus } from "../ProjectCard";
 
 const MyProjects = () => {
   return (
@@ -19,6 +17,7 @@ const MyProjects = () => {
         status={ProjectStatus.done}
         workTime={"1 week"}
         liveButtonHref="#"
+        repositoryButtonHref="#"
       />
 
       <ProjectCard
@@ -27,6 +26,8 @@ const MyProjects = () => {
         position="right"
         status={ProjectStatus.done}
         workTime={"1 day"}
+        liveButtonHref="x"
+        repositoryButtonHref="x"
       />
       <ProjectCard
         title="e-Bank"
@@ -39,7 +40,6 @@ const MyProjects = () => {
         description="Browser game. More info coming soon."
         status={ProjectStatus.inprogress}
         workTime={"1 week"}
-        liveButtonHref="xx"
         repositoryButtonHref="https://github.com/Playrole-Games/shizuka-no-sakura"
         position="right"
       />

@@ -46,7 +46,7 @@ const Header = () => {
           like to do first?
         </div>
 
-        <div className="lg:flex lg:justify-between lg:items-center">
+        <div className="lg:flex lg:justify-between lg:items-center lg:gap-4">
           <Button href="#about">Know me</Button>
           <Button href="#projects">See projects</Button>
           <p className="hidden lg:block">or just</p>

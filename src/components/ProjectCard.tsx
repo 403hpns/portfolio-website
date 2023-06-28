@@ -57,9 +57,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         position === "left" ? "self-start" : "self-end"
       } w-full p-6 my-5 lg:my-0 lg:w-1/2 rounded border-2 border-primary bg-zinc-900/80
        
-      before:absolute before:bottom-[-10px] before:right-[5px] before:w-80 before:h-px before:bg-primary
+      before:absolute before:bottom-[-10px] before:right-[5px] before:w-40 before:h-px before:bg-primary
       
-      after:absolute after:bottom-4 after:left-[-10px] after:w-px after:h-80 after:bg-primary`}
+      after:absolute after:bottom-0 after:left-[-10px] after:w-px after:h-40 after:bg-primary`}
     >
       <div className="w-full p-4 flex flex-col gap-4">
         <h2 className="text-2xl text-primary font-bold leading-none ">
@@ -71,12 +71,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         </h2>
         <p className="text-justify">{description}</p>
 
-        <Button disabled={!liveButtonHref} href={liveButtonHref}>
-          See live demo
-        </Button>
-        <Button disabled={!repositoryButtonHref} href={repositoryButtonHref}>
-          Check GitHub repository
-        </Button>
+        {liveButtonHref && (
+          <Button disabled={!liveButtonHref} href={liveButtonHref}>
+            See live demo
+          </Button>
+        )}
+
+        {repositoryButtonHref && (
+          <Button disabled={!repositoryButtonHref} href={repositoryButtonHref}>
+            Check GitHub repository
+          </Button>
+        )}
       </div>
     </motion.div>
   );
