@@ -1,6 +1,7 @@
 import { merge } from "@/lib/merge";
 import { VariantProps, cva } from "class-variance-authority";
-import { InputHTMLAttributes, ReactNode, forwardRef } from "react";
+import { InputHTMLAttributes, ReactNode } from "react";
+import { FieldErrors, FieldValues, UseFormRegister } from "react-hook-form";
 
 const inputVariants = cva("", {
   variants: {
@@ -18,29 +19,44 @@ const inputVariants = cva("", {
 });
 
 interface InputProps
-  extends InputHTMLAttributes<HTMLInputElement>,
+  extends Omit<InputHTMLAttributes<HTMLInputElement>, "ref">,
     VariantProps<typeof inputVariants> {
   name: string;
-  label: string;
+  label?: string;
+  type: "text" | "email" | "number" | "submit" | "reset";
+  errors: FieldErrors;
+  register: UseFormRegister<FieldValues>;
+  validationSchema?: {};
 }
 
-const Input: React.FC<InputProps> = forwardRef<HTMLInputElement, InputProps>(
-  ({ label, name, className, variant, sizing, ...props }, ref) => {
-    return (
-      <div className="relative w-full before:top-5 before:left-0 before:w-5 before:h-5 before:bg-red-500">
-        <label className="py-4" htmlFor={name}>
-          {label}
-        </label>
-        <input
-          name={name}
-          ref={ref}
-          {...props}
-          className={merge(inputVariants({ className, variant, sizing }))}
-        />
-      </div>
-    );
-  }
-);
+const Input: React.FC<InputProps> = ({
+  name,
+  label,
+  errors,
+  type,
+  className,
+  variant,
+  sizing,
+  register,
+  validationSchema,
+  ...props
+}) => {
+  return (
+    <div className="w-full">
+      <label htmlFor={name} className="py-4">
+        {label}
+      </label>
+      <input
+        type={type}
+        id={name}
+        aria-invalid={errors[name] ? "true" : "false"}
+        className={merge(inputVariants({ className, variant, sizing }))}
+        {...register(name, validationSchema)}
+        {...props}
+      />
+      <p>{errors[name]?.message?.toString()}</p>
+    </div>
+  );
+};
 
-Input.displayName = "Input";
 export default Input;

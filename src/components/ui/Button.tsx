@@ -41,6 +41,7 @@ const buttonVariants = cva(
 interface ButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
+  type: "submit" | "reset";
   isLoading?: boolean;
   icon?: ReactNode;
   href?: string;
@@ -51,6 +52,7 @@ interface ButtonProps
 const Button: FC<ButtonProps> = forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
+      type,
       isLoading,
       icon = <BsArrowRight />,
       href,
@@ -74,6 +76,7 @@ const Button: FC<ButtonProps> = forwardRef<HTMLButtonElement, ButtonProps>(
         >
           <button
             ref={ref}
+            type={type}
             disabled={isLoading}
             onClick={onClick}
             className={merge(buttonVariants({ className, variant, size }))}

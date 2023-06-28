@@ -10,7 +10,6 @@ export enum ProjectStatus {
 }
 
 interface ProjectCardProps {
-  image: string | StaticImageData;
   title: string;
   description: string;
   position?: string;
@@ -27,7 +26,6 @@ const variants = {
 };
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
-  image,
   title,
   description,
   position = "left",
@@ -59,14 +57,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         position === "left" ? "self-start" : "self-end"
       } w-full p-6 my-5 lg:my-0 lg:w-1/2 rounded border-2 border-primary bg-zinc-900/80 origin-top subpixel-antialiased`}
     >
-      <div className="min-h-full">
-        <Image
-          src={image}
-          alt=""
-          className="hidden h-full object-cover"
-          unoptimized
-        />
-      </div>
       <div className="w-full p-4 flex flex-col gap-2">
         <h2 className="text-3xl text-primary font-bold leading-none ">
           {title}{" "}

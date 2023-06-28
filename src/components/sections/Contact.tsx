@@ -12,15 +12,16 @@ import Button from "../ui/Button";
 import Input from "../ui/Input";
 
 import { motion } from "framer-motion";
+import ContactForm from "../ContactForm";
 
 const Contact = () => {
   return (
     <motion.section
+      id="contact"
+      className="flex flex-col justify-center items-center gap-10 p-4"
       initial={{ opacity: 0, top: -100 }}
       whileInView={{ opacity: 1, top: 0 }}
       transition={{ duration: 1 }}
-      id="contact"
-      className="flex flex-col justify-center items-center gap-10 p-4 "
     >
       <h2 className="uppercase text-6xl font-semibold">
         Get in <p className="text-primary">touch.</p>
@@ -70,22 +71,7 @@ const Contact = () => {
         </Button>
       </div>
 
-      <form className="hidden lg:block form flex-col justify-center items-center gap-4 w-full lg:w-1/2 p-4 rounded border-2 border-primary bg-zinc-900/90 animate-show-ui">
-        <p className="p-2 text-center">Feel free to send me a message.</p>
-        <Input name="mail" label="E-mail" />
-        <Input name="subject" label="Subject" />
-        <div className="min-w-full">
-          <label htmlFor="message">Message</label>
-          <textarea
-            name="message"
-            className="my-2 p-2 min-h-[100px] w-full outline-none border-none resize-none bg-zinc-800"
-          />
-        </div>
-        <div className="flex justify-center items-center gap-4">
-          <Button type="submit">Submit</Button>
-          <Button type="reset">Clear</Button>
-        </div>
-      </form>
+      <ContactForm />
     </motion.section>
   );
 };
