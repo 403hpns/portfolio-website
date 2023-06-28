@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import {
   AiOutlineMail,
   AiFillGithub,
@@ -12,7 +11,6 @@ import Button from "../ui/Button";
 import Input from "../ui/Input";
 
 import { motion } from "framer-motion";
-import ContactForm from "../ContactForm";
 
 const Contact = () => {
   return (
@@ -28,15 +26,11 @@ const Contact = () => {
       </h2>
 
       <div className="flex justify-center items-center flex-wrap w-full gap-8">
-        <Button
-          variant={"contact"}
-          icon={false}
-          onClick={() =>
-            document.querySelector(".form")?.classList.toggle("hidden")
-          }
-        >
-          <AiOutlineMail />
-        </Button>
+        <form action="mailto:dev.403hpns@pm.me">
+          <Button type="submit" variant={"contact"} icon={false} href="contact">
+            <AiOutlineMail />
+          </Button>
+        </form>
 
         <Button
           variant="contact"
@@ -70,8 +64,6 @@ const Contact = () => {
           <BsDiscord />
         </Button>
       </div>
-
-      <ContactForm />
     </motion.section>
   );
 };

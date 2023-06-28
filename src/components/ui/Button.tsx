@@ -41,7 +41,7 @@ const buttonVariants = cva(
 interface ButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
-  type: "submit" | "reset";
+  type?: "submit" | "reset";
   isLoading?: boolean;
   icon?: ReactNode;
   href?: string;

@@ -13,7 +13,7 @@ const Home = () => {
           <Navbar />
           <Header />
         </div>
-        <main className="flex flex-col gap-20">
+        <main className="flex flex-col gap-40">
           <About />
           <MyProjects />
           <Contact />
