@@ -1,5 +1,7 @@
 "use client";
 
+import { useState } from "react";
+
 import {
   AiOutlineMail,
   AiFillGithub,
@@ -11,8 +13,11 @@ import Button from "../ui/Button";
 import Input from "../ui/Input";
 
 import { motion } from "framer-motion";
+import ContactForm from "../ContactForm";
 
 const Contact = () => {
+  const [isContactFormOpen, setIsContactFormOpen] = useState(true);
+
   return (
     <motion.section
       id="contact"
@@ -26,11 +31,14 @@ const Contact = () => {
       </h2>
 
       <div className="flex justify-center items-center flex-wrap w-full gap-8">
-        <form action="mailto:dev.403hpns@pm.me">
-          <Button type="submit" variant={"contact"} icon={false} href="contact">
-            <AiOutlineMail />
-          </Button>
-        </form>
+        <Button
+          variant={"contact"}
+          icon={false}
+          href="#contact"
+          onClick={() => setIsContactFormOpen((prevState) => !prevState)}
+        >
+          <AiOutlineMail />
+        </Button>
 
         <Button
           variant="contact"
@@ -64,6 +72,8 @@ const Contact = () => {
           <BsDiscord />
         </Button>
       </div>
+
+      <ContactForm isOpen={isContactFormOpen} />
     </motion.section>
   );
 };

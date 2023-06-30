@@ -22,10 +22,10 @@ const MyProjects = () => {
 
       <ProjectCard
         title="GitHub Searcher"
-        description="GitHub searcher"
+        description="GitHub searcher is an application that allows you search users and repositories on GitHub. Stack I used for this project is: HTML5, CSS3, TypeScript, axios."
         position="right"
         status={ProjectStatus.done}
-        workTime={"1 day"}
+        workTime={"2 days"}
         liveButtonHref="x"
         repositoryButtonHref="x"
       />
