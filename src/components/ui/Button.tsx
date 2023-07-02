@@ -6,7 +6,7 @@ import { merge } from "@/lib/merge";
 import Link from "next/link";
 
 const buttonVariants = cva(
-  "relative flex justify-center items-center gap-2 z-10 transition-all duration-300 disabled:bg-zinc-800 disabled:after:border-none disabled:pointer-events-none disabled:cursor-not-allowed ",
+  "relative flex justify-center items-center gap-2 z-10 transition-all duration-300 cursor-pointer disabled:bg-zinc-800 disabled:after:border-none disabled:pointer-events-none disabled:cursor-not-allowed ",
   {
     variants: {
       variant: {
@@ -16,11 +16,13 @@ const buttonVariants = cva(
           
         after:absolute after:top-0 after:left-0 after:w-0 after:h-full hover:after:w-full hover:after:h-full  after:bg-pink-500/80 after:-z-10 after:transition-all after:duration-300`,
 
-        contact: "text-5xl rounded bg-primary cursor-pointer hover:bg-pink-500",
+        contact: "text-5xl rounded bg-primary hover:bg-pink-500",
         navigation: "bg-zinc-900/80 hover:bg-primary",
+        icon: "hover:text-primary hover:scale-110",
       },
       size: {
         default: "px-10 py-5",
+        small: "px-1 py-1",
       },
     },
     defaultVariants: {
