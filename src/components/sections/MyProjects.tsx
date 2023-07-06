@@ -1,7 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
-
 import ProjectCard from "../ProjectCard";
 import { ProjectStatus } from "../ProjectCard";
 
@@ -17,23 +15,24 @@ const MyProjects = () => {
         status={ProjectStatus.done}
         workTime={"1 week"}
         liveButtonHref="#"
-        repositoryButtonHref="#"
+        repositoryButtonHref="https://github.com/403hpns/portfolio-website"
       />
 
       <ProjectCard
         title="GitHub Searcher"
-        description="GitHub searcher is an application that allows you search users and repositories on GitHub. Stack I used for this project is: HTML5, CSS3, TypeScript, axios."
+        description="GitHub searcher is an application that allows you search users and repositories on GitHub. Stack I used for this project: HTML5, CSS3, TypeScript, axios."
         position="right"
         status={ProjectStatus.done}
         workTime={"2 days"}
         liveButtonHref="x"
-        repositoryButtonHref="x"
+        repositoryButtonHref="https://github.com/403hpns/github-searcher"
       />
       <ProjectCard
         title="e-Bank"
         description="A fictional online banking website. It includes a homepage that describes the benefits of opening an account with the bank, a functional dashboard where you can open a new bank account, create a new card, apply for a loan, or make a money transfer to another account. Used technologies: React, TypeScript, Next.js, TailwindCSS."
         status={ProjectStatus.inprogress}
         workTime={"1 week"}
+        repositoryButtonHref="https://github.com/403hpns/ebank-app"
       />
       <ProjectCard
         title="Shizuka no Sakura"

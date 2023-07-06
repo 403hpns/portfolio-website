@@ -52,7 +52,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen }) => {
       ref={form}
       onSubmit={onSubmit}
       action="mailto:dev.403hpns@pm.me"
-      className="form px-8 py-6 w-1/2 flex flex-col justify-center items-center gap-8 bg-zinc-900/90"
+      className="form px-8 py-6 w-full lg:w-1/2 flex flex-col justify-center items-center gap-8 bg-zinc-900/90"
     >
       <p>Feel free to send me a meessage.</p>
       <div className="w-full">

@@ -12,7 +12,12 @@ import Button from "./ui/Button";
 const Toolbar = () => {
   return (
     <div className="hidden lg:flex md:gap-4 md:text-3xl">
-      <Button icon={false} variant="navigation" className="text-base">
+      <Button
+        href="https://drive.google.com/file/d/1bFNBgZ7DyXaZkId0GNXmCEYu9-6TsaXR/view?usp=sharing"
+        icon={false}
+        variant="navigation"
+        className="text-base"
+      >
         Resume
       </Button>
       <Icon element={<AiFillGithub />} href="https://github.com/403hpns" />
