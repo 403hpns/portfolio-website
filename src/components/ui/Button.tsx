@@ -65,7 +65,6 @@ const Button: FC<ButtonProps> = forwardRef<HTMLButtonElement, ButtonProps>(
     },
     ref
   ) => {
-    
     return (
       <div className="my-2">
         <Link
