@@ -93,7 +93,7 @@ const About = () => {
 
           <Accordion
             header="What technology stack are you familiar with?"
-            body="HTML5, CSS3, JavaScript, TypeScript, React, Next.js, Redux, SASS (SCSS), CSS Modules, Styled Components, TailwindCSS, ChakraUI, Vite, Webpack, Docker, Git, LUA"
+            body="HTML5, CSS3, JavaScript, TypeScript, React, Next.js, C#, .NET, Redux, React Query, SASS (SCSS), CSS Modules, Styled Components, TailwindCSS, ChakraUI, Vite, Webpack, Docker, Prisma, Git, LUA"
           />
           <Accordion
             header="What is your daily routine as a developer?"
@@ -102,8 +102,12 @@ const About = () => {
                     However, technology is not the only important aspect. I also dedicate a lot of time to personal development, reading books (mostly about psychology), and engaging in physical exercises."
           />
           <Accordion
+            header="What do you plan to learn?"
+            body="Angular, C / C++, Unreal Engine"
+          />
+          <Accordion
             header="What are you going to do in the future?"
-            body="1"
+            body="Well, I'll definitely continue to be a programmer. Great plans must be realized :)"
           />
         </div>
       </div>
