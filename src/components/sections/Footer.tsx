@@ -7,6 +7,7 @@ import Logo from "../Logo";
 import Button from "../ui/Button";
 import Icon from "../ui/Icon";
 import { BiCoffeeTogo } from "react-icons/bi";
+import { RiTwitterXFill } from "react-icons/ri";
 
 const Footer = () => {
   return (
@@ -57,7 +58,7 @@ const Footer = () => {
             href="https://www.linkedin.com/in/jakub-kor%C5%BC/"
           />
           <Icon
-            element={<AiFillTwitterCircle />}
+            element={<RiTwitterXFill />}
             href="https://twitter.com/403hpns"
           />
           <Icon
