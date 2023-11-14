@@ -1,16 +1,12 @@
-import {
-  Field,
-  FieldValues,
-  FormSubmitHandler,
-  SubmitHandler,
-  useForm,
-} from "react-hook-form";
-import Input from "./ui/Input";
-import { FormEventHandler, useRef, useState } from "react";
-import { AiOutlineLoading3Quarters } from "react-icons/ai";
+"use client";
+
+import { useForm } from "react-hook-form";
+import { useRef } from "react";
 
 import emailjs from "@emailjs/browser";
+import toast from "react-hot-toast";
 
+import Input from "./ui/Input";
 interface ContactFormProps {
   isOpen: boolean;
 }
@@ -24,26 +20,26 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen }) => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = handleSubmit((data) => {
-    console.log("Sending e-mail");
-    emailjs
-      .sendForm(
-        "service_vk4654c",
-        "template_uj92b0j",
-        form.current,
-        "jDR9STT3BhreUpkmd"
-      )
-      .then(
-        (result) => {
-          console.log(result);
-        },
-        (error) => {
-          console.error(error);
-        }
-      );
-  });
+  const onSubmit = handleSubmit(async () => {
+    const res = await emailjs.sendForm(
+      "service_vk4654c",
+      "template_uj92b0j",
+      form.current,
+      "jDR9STT3BhreUpkmd"
+    );
 
-  const sendEmail = async (e: SubmitHandler<FieldValues>) => {};
+    if (res.status === 200) {
+      form.current.reset();
+
+      toast.success("Successfully sended a message.", {
+        position: "bottom-center",
+      });
+    } else {
+      toast.error(
+        "An error occurred while sending the message. Please try again later."
+      );
+    }
+  });
 
   if (!isOpen) return;
 
@@ -95,6 +91,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen }) => {
           value="Send message"
           register={register}
           errors={errors}
+          className="hover:bg-primary transition cursor-pointer"
         />
         <Input
           type="reset"
@@ -102,6 +99,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen }) => {
           value="Clear"
           register={register}
           errors={errors}
+          className="hover:bg-primary transition cursor-pointer"
         />
       </div>
     </form>
