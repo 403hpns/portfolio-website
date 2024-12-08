@@ -7,12 +7,11 @@ import Link from "next/link";
 import Accordion from "../Accordion";
 
 import { motion } from "framer-motion";
-
-const getMyAge = new Date().getFullYear() - 2000;
+import { GET_MY_AGE } from "@/shared/constants";
 
 const questions = [
   { question: "name", anwser: "Kuba" },
-  { question: "age", anwser: getMyAge },
+  { question: "age", anwser: GET_MY_AGE },
   { question: "location", anwser: "Poland, Poznań" },
   {
     question: "favorite games",

@@ -9,13 +9,9 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 import hackerImage from "@/assets/hacker.svg";
+import { GET_MY_AGE } from "@/shared/constants";
 
 const Header = () => {
-  const getCurrentAge = useMemo(
-    () => new Date().getFullYear() - 2000 || 23,
-    []
-  );
-
   const removeOpaciyWhenImageLoaded = useCallback((img: HTMLImageElement) => {
     img.classList.remove("opacity-0");
   }, []);
@@ -38,7 +34,7 @@ const Header = () => {
         </div>
 
         <div className="leading-tight text-3xl text-justify">
-          I’m Kuba, {getCurrentAge} y.o. guy from Poland, a passionate{" "}
+          I’m Kuba, {GET_MY_AGE} y.o. guy from Poland, a passionate{" "}
           <span className="font-semibold text-[#6C63FF] tracking-wide ">
             self-taught
           </span>{" "}
