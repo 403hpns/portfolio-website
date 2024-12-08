@@ -1,33 +1,21 @@
 "use client";
 
-import { ReactNode, useState, useEffect } from "react";
-import Link from "next/link";
+import { ReactNode, useState, useEffect, PropsWithChildren } from "react";
 import { motion } from "framer-motion";
 import { SlMenu } from "react-icons/sl";
+import Link from "next/link";
 
 import Logo from "../Logo";
 import Toolbar from "../Toolbar";
-import {
-  AiOutlineFileDone,
-  AiOutlineFolderOpen,
-  AiOutlineMail,
-  AiOutlineUser,
-} from "react-icons/ai";
-
-import { FiMail } from "react-icons/fi";
-import { GrDocumentPdf } from "react-icons/gr";
-import { FaFolder, FaUserAlt, FaPhoneAlt } from "react-icons/fa";
 import Button from "../ui/Button";
 
-const Navbar = ({ children }: { children?: ReactNode }) => {
+const Navbar = ({ children }: PropsWithChildren) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     if (isMenuOpen) {
-      // Blokuj przewijanie strony, gdy menu jest otwarte
       document.body.style.overflow = "hidden";
     } else {
-      // Przywróć normalne przewijanie strony, gdy menu jest zamknięte
       document.body.style.overflow = "auto";
     }
   }, [isMenuOpen]);
@@ -36,7 +24,6 @@ const Navbar = ({ children }: { children?: ReactNode }) => {
     <nav className="fixed top-0 left-0 w-full px-8 py-6 2xl:px-40 flex justify-between items-center z-50 bg-black/50 before:absolute before:inset-0 before:w-full before:h-full before:backdrop-blur-xl before:-z-50">
       <Logo />
 
-      {/* For mobile devices */}
       <div
         onClick={() => setIsMenuOpen((prevState) => !prevState)}
         className="block lg:hidden z-40 text-3xl cursor-pointer hover:font-bold hover:text-pink-500"
@@ -81,7 +68,6 @@ const Navbar = ({ children }: { children?: ReactNode }) => {
         </motion.div>
       )}
 
-      {/* For other devices */}
       <div className="hidden lg:block">
         <ul className="flex justify-between rounded">
           <Button icon={false} variant="navigation" href="#about">
@@ -121,20 +107,6 @@ const HamburgerItem = ({
       className="my-4 uppercase text-4xl hover:font-semibold hover:text-pink-500 "
     >
       {children}
-    </Link>
-  );
-};
-
-const ListItem = ({
-  children,
-  href,
-}: {
-  children: ReactNode;
-  href: string;
-}) => {
-  return (
-    <Link href={href} className="py-4 px-12 transition-colors hover:bg-primary">
-      <li className="flex items-center gap-3">{children}</li>
     </Link>
   );
 };

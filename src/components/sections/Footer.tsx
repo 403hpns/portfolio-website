@@ -45,6 +45,7 @@ const Footer = () => {
           icon={false}
           className="bg-zinc-800 text-base"
           variant="navigation"
+          href="https://403hpns.dev/resume/eng"
         >
           Check my CV
         </Button>

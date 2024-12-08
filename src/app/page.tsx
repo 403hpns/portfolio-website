@@ -9,11 +9,10 @@ const Home = () => {
   return (
     <>
       <div className="container mx-auto px-8 py-5 flex flex-col gap-40 z-10 overflow-x-hidden">
-        <div>
-          <Navbar />
-          <Header />
-        </div>
-        <main className="flex flex-col gap-40">
+        <Navbar />
+        <Header />
+
+        <main className="grid gap-40">
           <About />
           <MyProjects />
           <Contact />

@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${k2d.className}`}>
-        <div className="overflow-x-hidden fixed inset-0 w-full h-screen -z-50 scale-100 after:block after:absolute after:inset-0 after:w-full after:h-full after:bg-main after:bg-center after:bg-cover" />
+        <div className="overflow-hidden fixed inset-0 w-full h-full -z-50 scale-105 bg-main bg-center bg-cover" />
         {children}
         <Toaster />
       </body>

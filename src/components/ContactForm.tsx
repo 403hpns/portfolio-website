@@ -1,17 +1,17 @@
 "use client";
 
-import { useForm } from "react-hook-form";
 import { useRef } from "react";
-
+import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
 import toast from "react-hot-toast";
 
 import Input from "./ui/Input";
+
 interface ContactFormProps {
   isOpen: boolean;
 }
 
-const ContactForm: React.FC<ContactFormProps> = ({ isOpen }) => {
+const ContactForm = ({ isOpen }: ContactFormProps) => {
   const form = useRef<HTMLFormElement>(null!);
 
   const {
@@ -21,14 +21,14 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen }) => {
   } = useForm();
 
   const onSubmit = handleSubmit(async () => {
-    const res = await emailjs.sendForm(
-      "service_vk4654c",
-      "template_uj92b0j",
+    const { status } = await emailjs.sendForm(
+      process.env.EMAIL_SERVICE_ID!,
+      process.env.EMAIL_TEMPLATE_ID!,
       form.current,
-      "jDR9STT3BhreUpkmd"
+      process.env.EMAIL_PUBLIC_KEY!
     );
 
-    if (res.status === 200) {
+    if (status === 200) {
       form.current.reset();
 
       toast.success("Successfully sended a message.", {
@@ -41,7 +41,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen }) => {
     }
   });
 
-  if (!isOpen) return;
+  if (!isOpen) return null;
 
   return (
     <form
@@ -105,4 +105,5 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen }) => {
     </form>
   );
 };
+
 export default ContactForm;

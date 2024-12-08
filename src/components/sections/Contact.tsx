@@ -1,19 +1,17 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 
+import ContactForm from "../ContactForm";
+import Button from "../ui/Button";
+import { BsDiscord } from "react-icons/bs";
 import {
   AiOutlineMail,
   AiFillGithub,
   AiFillLinkedin,
   AiFillTwitterCircle,
 } from "react-icons/ai";
-import { BsDiscord } from "react-icons/bs";
-import Button from "../ui/Button";
-import Input from "../ui/Input";
-
-import { motion } from "framer-motion";
-import ContactForm from "../ContactForm";
 
 const Contact = () => {
   const [isContactFormOpen, setIsContactFormOpen] = useState(true);
