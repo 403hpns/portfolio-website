@@ -23,7 +23,7 @@ const MyProjects = () => {
         position="right"
         status={ProjectStatus.done}
         workTime="5 months"
-        liveButtonHref="https://www.telemagic.pl/"
+        liveButtonHref="https://telemagic.pl/"
       />
       <ProjectCard
         title="TRPG Assistant"
