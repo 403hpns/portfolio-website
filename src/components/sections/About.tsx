@@ -73,9 +73,10 @@ const About = () => {
               - Trustisto as <strong>Full-stack Developer</strong> (12.2023 -
               11.2024) - developing CRM panel and internal systems for a company
               specializing in Marketing Automation solutions. Implementing new
-              functionalities, conducting integrations with clients' e-commerce
-              systems, and working with AWS solutions, including managing cloud
-              infrastructure, scalability, and performance optimization.
+              functionalities, conducting integrations with clients&apos;
+              e-commerce systems, and working with AWS solutions, including
+              managing cloud infrastructure, scalability, and performance
+              optimization.
             </li>
             <li>
               - Ancad Studios as <strong>Full-stack Developer</strong> (05.2021
