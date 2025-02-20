@@ -1,7 +1,23 @@
-"use client";
+'use client';
 
-import ProjectCard from "../ProjectCard";
-import { ProjectStatus } from "../ProjectCard";
+const stack = {
+  ts: { id: 'ts', name: 'TypeScript' },
+  js: { id: 'js', name: 'JavaScript' },
+  next: { id: 'next', name: 'Next.js' },
+  react: { id: 'react', name: 'React' },
+  nuxt: { id: 'nuxt', name: 'Nuxt' },
+  vue: { id: 'vue', name: 'Vue' },
+  nest: { id: 'nest', name: 'NestJS' },
+  java: { id: 'java', name: 'Java' },
+  cs: { id: 'cs', name: 'C#' },
+  net: { id: 'net', name: '.NET' },
+  html: { id: 'html', name: 'HTML' },
+  css: { id: 'css', name: 'CSS' },
+  tailwindcss: { id: 'tailwindcss', name: 'TailwindCSS' },
+  chakra: { id: 'chakra', name: 'Chakra UI' },
+};
+
+import ProjectCard, { ProjectStatus } from '../ProjectCard';
 
 const MyProjects = () => {
   return (
@@ -11,61 +27,92 @@ const MyProjects = () => {
       </h2>
       <ProjectCard
         title="My portfolio"
-        description="This is my personal portfolio website, which you are currently visiting. I used technologies such as React, TypeScript, Next.js, and TailwindCSS. The biggest challenge was the overflow of ideas, as each new one drastically changed the entire site, leading to increased development time. In the end, I opted for a simpler approach."
+        description="This is my personal portfolio website, which you are currently visiting."
+        technologies={[stack.next, stack.react, stack.ts, stack.tailwindcss]}
         status={ProjectStatus.done}
-        workTime={"1 month"}
+        workTime={'1 month'}
         liveButtonHref="#"
         repositoryButtonHref="https://github.com/403hpns/portfolio-website"
       />
       <ProjectCard
         title="TeleMagic.pl"
-        description="A commercial single-page application created for a Polish GSM company. The project was developed using Next.js, React, TypeScript, and TailwindCSS."
+        description="A commercial landing page created for a Polish GSM company."
+        technologies={[stack.next, stack.react, stack.ts, stack.tailwindcss]}
         position="right"
         status={ProjectStatus.done}
         workTime="5 months"
         liveButtonHref="https://telemagic.pl/"
       />
       <ProjectCard
+        title="UNO Online"
+        description="UNO Online is a real-time multiplayer implementation of the classic card game UNO, built with modern web technologies. This project allows players to create lobbies, invite friends, and play together. "
+        position="left"
+        technologies={[stack.nuxt, stack.vue, stack.nest, stack.tailwindcss]}
+        status={ProjectStatus.done}
+        workTime="5 months"
+        liveButtonHref="https://403hpns.dev/projects/uno/"
+        repositoryButtonHref="https://github.com/403hpns/uno-online"
+      />
+      <ProjectCard
         title="TRPG Assistant"
         description="A PWA application for managing TRPG sessions. It allows the creation of campaigns and sessions, offering tools such as character and item generators, as well as control over the stats of heroes and enemies."
-        position="left"
+        technologies={[stack.react, stack.ts, stack.tailwindcss]}
+        position="right"
         status={ProjectStatus.inprogress}
+        repositoryButtonHref="https://github.com/403hpns/rpg-assistant"
       />
       <ProjectCard
         title="Social Role Play"
         description="Multiplayer role-playing game. I'm responsible for implementing the system architecture, managing the software development process, code review, and supporting the team."
+        technologies={[
+          stack.nuxt,
+          stack.vue,
+          stack.nest,
+          stack.ts,
+          stack.tailwindcss,
+        ]}
         status={ProjectStatus.inprogress}
-        position="right"
+        position="left"
       />
       <ProjectCard
         title="GTA World"
-        description="International multiplayer role-playing project based on RAGE:MP platform. I was responsible for implementing and reworking game UIs (React, TS, ChakraUI) and their backend (C#)."
+        description="International multiplayer role-playing project based on RAGE:MP platform. I was responsible for implementing and reworking game UIs and game systems in backend."
+        technologies={[
+          stack.cs,
+          stack.net,
+          stack.react,
+          stack.ts,
+          stack.chakra,
+        ]}
         status={ProjectStatus.done}
         workTime="above 2 years"
         liveButtonHref="https://gta.world/"
+        position="right"
       />
 
       <ProjectCard
         title="MC DiscordAuth"
         description="An authentication plugin for Minecraft written in Java that blocks all basic in-game operations when a player joins the server. The plugin then sends a notification to Discord via a webhook with connection details. If the connection is accepted, player is allowed to join; if not, it is kicked from the server."
-        position="right"
+        technologies={[stack.java]}
+        position="left"
         status={ProjectStatus.done}
         workTime="1 day"
       />
       <ProjectCard
         title="e-Bank"
-        description="A fictional online banking website. It includes a homepage that describes the benefits of opening an account with the bank, and a functional dashboard where you can open a new bank account, create a new card, apply for a loan, or make a money transfer to another account. Technologies used: React, TypeScript, Next.js, TailwindCSS."
+        description="A fictional online banking website. It includes a homepage that describes the benefits of opening an account with the bank, and a functional dashboard where you can open a new bank account, create a new card, apply for a loan, or make a money transfer to another account."
+        technologies={[stack.next, stack.react, stack.ts, stack.tailwindcss]}
         status={ProjectStatus.done}
-        workTime={"4 months"}
-        liveButtonHref="https://403hpns.dev/projects/ebank"
+        workTime={'4 months'}
         repositoryButtonHref="https://github.com/403hpns/ebank-app"
+        position="right"
       />
       <ProjectCard
         title="GitHub Searcher"
-        description="GitHub searcher is an application that allows you to search users and repositories on GitHub. Stack I used for this project: HTML5, CSS3, TypeScript, axios."
-        position="right"
+        description="GitHub searcher is an application that allows you to search users and repositories on GitHub."
+        technologies={[stack.html, stack.css, stack.js]}
         status={ProjectStatus.done}
-        workTime={"2 days"}
+        workTime={'2 days'}
         liveButtonHref="https://403hpns.github.io/github-searcher/"
         repositoryButtonHref="https://github.com/403hpns/github-searcher"
       />

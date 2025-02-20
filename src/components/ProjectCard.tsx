@@ -1,8 +1,7 @@
-import { useEffect, useRef } from "react";
-import Image, { StaticImageData } from "next/image";
-import Button from "./ui/Button";
+import { useEffect, useRef } from 'react';
+import Button from './ui/Button';
 
-import { motion, useAnimation, useInView } from "framer-motion";
+import { motion, useAnimation, useInView } from 'framer-motion';
 
 export enum ProjectStatus {
   done,
@@ -12,6 +11,7 @@ export enum ProjectStatus {
 interface ProjectCardProps {
   title: string;
   description: string;
+  technologies?: { id: string; name: string }[];
   position?: string;
   status: ProjectStatus;
   workTime?: string | number;
@@ -21,14 +21,15 @@ interface ProjectCardProps {
 
 const variants = {
   hiddenPosition: (pos: string) =>
-    pos === "left" ? { x: "-100%" } : { x: "100%" },
-  visiblePosition: { x: "0%" },
+    pos === 'left' ? { x: '-100%' } : { x: '100%' },
+  visiblePosition: { x: '0%' },
 };
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
   title,
   description,
-  position = "left",
+  technologies,
+  position = 'left',
   status,
   workTime,
   liveButtonHref,
@@ -40,9 +41,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 
   useEffect(() => {
     if (inView) {
-      controls.start("visiblePosition");
+      controls.start('visiblePosition');
     } else {
-      controls.start("hiddenPosition");
+      controls.start('hiddenPosition');
     }
   }, [controls, inView]);
   return (
@@ -52,9 +53,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       animate={controls}
       transition={{ duration: 0.2 }}
       ref={ref}
-      exit={"exitPosition"}
-      className={`relative ${
-        position === "left" ? "self-start" : "self-end"
+      exit={'exitPosition'}
+      className={`relative group ${
+        position === 'left' ? 'self-start' : 'self-end'
       } w-full p-6 my-5 lg:my-0 lg:w-1/2 rounded border-2 border-primary bg-zinc-900/80
        
       before:absolute before:bottom-[-10px] before:right-[5px] before:w-40 before:h-px before:bg-primary
@@ -63,13 +64,25 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     >
       <div className="w-full p-4 flex flex-col gap-4">
         <h2 className="text-2xl text-primary font-bold leading-none ">
-          {title}{" "}
+          {title}{' '}
           <p className="text-base text-white normal-case font-normal">
-            &#40;{status === ProjectStatus.done ? "Done" : "In-Progress"}
+            &#40;{status === ProjectStatus.done ? 'Done' : 'In-Progress'}
             {status === ProjectStatus.done && <>, {workTime} of work</>}&#41;
           </p>
         </h2>
         <p className="text-justify">{description}</p>
+
+        <ul className="flex gap-6">
+          {technologies?.map((t) => (
+            <li key={t.id} className="flex items-center gap-1.5 flex-wrap">
+              <img
+                className="transition group-hover:brightness-100 brightness-75  w-8 h-8"
+                src={`/${t.id}.svg`}
+              />{' '}
+              {t.name}
+            </li>
+          ))}
+        </ul>
 
         {liveButtonHref && (
           <Button disabled={!liveButtonHref} href={liveButtonHref}>
