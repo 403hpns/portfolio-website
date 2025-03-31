@@ -41,17 +41,17 @@ const About = () => {
         className="hidden lg:block lg:absolute lg:left-[0] lg:top-0 lg:w-[40%]"
       />
 
-      <div className="flex flex-col items-center gap-8 w-full p-6 border-2 border-primary rounded bg-zinc-900/80 lg:w-1/2">
+      <div className="flex flex-col items-center gap-8 w-full p-6 border-2 border-primary rounded bg-zinc-900/80 lg:w-1/2 overflow-scroll">
         {/* Heading */}
         <div className="flex px-8 py-4">
-          <h2 className="uppercase font-semibold text-5xl">
+          <h2 className="uppercase font-semibold text-4xl lg:text-5xl">
             About{" "}
-            <p className="text-primary text-8xl text-center font-bold ">me.</p>
+            <p className="text-primary text-5xl lg:text-8xl text-center font-bold ">me.</p>
           </h2>
         </div>
 
         {/* Content */}
-        <div className="flex justify-between flex-wrap gap-8 w-full">
+        <div className="flex justify-between flex-wrap gap-4 lg:gap-8 w-full overflow-scroll">
           {questions.map((item) => {
             return (
               <AboutQuestions

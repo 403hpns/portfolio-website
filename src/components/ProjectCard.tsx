@@ -72,7 +72,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         </h2>
         <p className="text-justify">{description}</p>
 
-        <ul className="flex gap-6">
+        <ul className="flex gap-6 flex-col sm:flex-row">
           {technologies?.map((t) => (
             <li key={t.id} className="flex items-center gap-1.5 flex-wrap">
               <img

@@ -12,7 +12,7 @@ const Home = () => {
         <Navbar />
         <Header />
 
-        <main className="grid gap-40">
+        <main className="flex flex-col gap-40">
           <About />
           <MyProjects />
           <Contact />
